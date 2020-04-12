@@ -5,12 +5,12 @@
 - **Crimes**  Table of crimes created from publicly available csv. Contains all the crime incident information.
 
   - **CID** - Case #**, integer. Unique in crimes table and outcomes table.
-  - **PID - Person ID**, integer. Unique in people table. Randomly generated for Mockup.
-  - **Penal_Code**, text.     Unique in Penal_Codes Table
+  - **SID - Suspect ID**, integer. Unique in people table. Randomly generated for Mockup.
+  - **VID - Victim ID**, integer. Unique in people table. Randomly generated for Mockup.
+  - **Penal_Code**, text.  Unique in Penal_Codes Table
   - **Penal_Desc**, text. Expect to match with Penal Codes descriptions. 
   - **Crime_Desc**, text. Text description of crime.
-  - **Date_Time****, datetime.
-
+- **Date_Time****, datetime.
   - **Loc_Add**, text.  Incident Address.
   - **Loc_City****, text.  Incident City.
   - **Loc_State****, text. 
@@ -18,13 +18,17 @@
   - **Loc_Lat**, integer.  Latitude
   - **Loc_Lng**, integer.  Longitude
   - **Mis_Fel**, text.  Misdemeanor or Felony
-  - **Inc_Result**, text. Booking vs citation vs DA Referral
+  - **Inc_Result**, text. Booking vs citation vs DA Referral**
+  
+- **Suspects**  Dataset to be supplied by local criminologist.  Linked to Crimes table by Suspect_ID.
+
+  - **SID - Suspect ID**, integer. Unique
   - **Gender**, text. 
-  - **Age**, int
+  - **Age**, int.
 
-- **People**  Derived from Crimes table. Table of all available data on crime suspects. Linked to Crimes table by Person ID.
+  **Victims**  Dataset to be supplied by local criminologist.  Linked to Crimes table by Victim_ID.
 
-  - **PID - Person ID**, integer. Unique
+  - **VID - Victim ID**, integer. Unique
   - **Gender**, text. 
   - **Age**, int
 

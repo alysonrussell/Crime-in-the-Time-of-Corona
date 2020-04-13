@@ -24,7 +24,7 @@ Local crime records obtained through the Modesto Police Department, queried by A
 ## Machine Learning Model
 For this assignment we have chosen to use linear regression as our model. 
 
-Using linear regression we will explore whether we have experienced an increase in crimes such as but not limited to domestic violence since the establishment of shelter-in-place orders in California, and if so the rate at which it has increased. 
+Using linear regression we will explore whether we have experienced an increase in crimes such as, but not limited to, domestic violence since the establishment of shelter-in-place orders in California, and if so the rate at which it has increased. 
 
 With this linear regression model we also hope to predict the continued impact the current situation has on these crimes should shelter-in-place orders continue for a uncertain amount of time. 
 

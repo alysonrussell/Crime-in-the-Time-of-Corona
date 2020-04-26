@@ -1,4 +1,4 @@
-year,population,violent_crime,homicide,rape_legacy,rape_revised,robbery,aggravated_assault,Yr Avg
+year,population,violent_crime,homicide,rape_legacy,rape_revised,robbery,aggravated_assault,emp_rate
 1980,222877773,1335465,22679,82327.0,0.0,563581,666878,6.811764705882353
 1981,226616000,1353533,22197,81788.0,0.0,590570,658978,7.3254901960784355
 1982,228984000,1314381,20654,78051.0,0.0,550976,664700,9.217647058823529

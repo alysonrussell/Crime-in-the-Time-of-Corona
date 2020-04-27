@@ -1,46 +1,85 @@
 # Crime in the Tine of Corona
 # Entity Relationship for use with QuickDBD
 # 
-Crimes
+Incidents
 -
-CID int pk
-SID int 
-Sus_Gen varchar
-Sus_Age int
-VID int 
-Vic_Gen varchar
-Vic_Age int
-Penal_Code varchar
-Penal_Desc varchar
-Crime_Desc varchar
-Date_Time date
-Loc_Add varchar
-Loc_City varchar
-Loc_State varchar
-Loc_Zip int
-Loc_Lat int
-Loc_Lng int
-Mis_Fel varchar
-Inc_Result varchar
+Number varchar pk
+dateReported date
+startDate date
+offenseCode varchar
+offenseDescription varchar
+streetAddress varchar
+cityDescription varchar
+stateDescription varchar
+zipCode int
+longitude int
+latitude int
+Booked bool
+DAComplaint bool
+Cited bool
+burglaryFactor varchar
+felonyMisdemeanor varchar
+dateIncident date
+weekNumber int
 
 Suspects
 -
-SID int pk fk - Crimes.SID
-Sus_Gen varchar
-Sus_Age int
+caseID text fk - Incidents.Number
+person_ID int pk
+Age int
+Sex varchar
 
 Victims
 -
-VID int pk fk - Crimes.VID
-Vic_Gen varchar
-Vic_Age int
+caseID text fk - Incidents.Number
+person_ID int pk
+Age int
+Sex varchar
 
 Penal_Codes
 -
-Penal_Code varchar pk fk - Crimes.Penal_Code
+Penal_Code varchar pk fk - Incidents.offenseCode
 Penal_Desc varchar
 
-Outcomes
+FBICrimes
 -
-CID int pk fk - Crimes.CID
-Inc_Result varchar
+PID pk fk - Employment.PID
+year date
+state_abbr text
+population int
+violent_crime int
+homicide int
+rape_legacy int
+rape_revised int
+robbery int
+aggravated_assault int
+
+Employment
+-
+PID varchar pk fk Employment.PID
+Year date
+Jan int
+Feb int
+Mar int
+Apr int
+May int
+Jun int
+Jul int
+Aug int
+Sep int
+Oct int
+Nov int
+Dec int
+YrAvg int
+
+CrimeEmpYear
+-
+year date pk fk - FBICrimes.year  fk - Employment.year
+population int
+violent_crime int
+homicide int
+rape_legacy int
+rape_revised int
+robbery int
+aggravated_assault int
+emp_rate int

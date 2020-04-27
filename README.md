@@ -76,12 +76,14 @@ Population for each state by year is also provided in this dataset
   - Description and explanation of model’s confusion matrix, including final accuracy score
   - **Important:** If statistical analysis is not included as part of the current analysis, the team should add a description of how it would be included in the next phases of the project.
 
-## Database Integration
-The MockUpDatabase folder in the CircleRole branch contains the files show below.
+## Crime_Corona Database Integration
+The Database folder contains the files shown below.
 
-- Mockup Crimes Database.md describes the tables and files.
-- DatabaseDesignWithQuickDBD.pdf shows the database design with QuickDBD.
-- EntityRelationshipDiagram-QuickDBD.png is a picture of the relational structure of the database with QuickDBD.
-- crimes.csv is the raw data file containing one hundred mock up rows with values for all fields in the database.
-- ETL.ipynb contains the Python code to load the crimes.csv and parse it into the needed tables for the database. The codes generates the four additional tables and exports as CSV. This code also creates and populates tables in a PostgreSQL database named "crime_corona."
-  - This Python ETL script assumes your PostgreSQL is in a config.py file stored in this MockUpDatabase folder. You do need the password to your own PostgreSQL server in order to populate the tables. You will first need to create an empty database in PostgreSQL named crime_corona.
+- CrimesCoronaDatabaseSchema.md describes the tables and files.
+- EntityRelationshipDiagram-QuickDBD shows the database design with QuickDBD.
+- Build_crime_corona_db_postGresql is sql script for building the database in postGresql, although the actual creation of tables is done via Python.
+
+The Scripts folder contains the files show below.
+
+- ETLforIncidents.ipynb contains the Python code to load the crimes.csv and parse it into the needed tables for the database. The codes generates  additional tables and exports as CSV. This code also creates and populates tables in a PostgreSQL database named "crime_corona." Successfully using this script assumes your PostgreSQL is in a config.py file stored in the Database folder. You do need the password to your own PostgreSQL server in order to populate the tables. You will first need to create an empty database in PostgreSQL named crime_corona.
+- CrimesAndUnemployment.ipynb contains Python code for loading FBI and Unemployment data from CSV files into data frames. Data frames are then cleaned,  parsed and merged into a summary data frame. This code  exports the three parsed data frames into CSV files and pipes them into the crime_corona database in PostgreSQL.

@@ -1,0 +1,46 @@
+# Crime in the Tine of Corona
+# Entity Relationship for use with QuickDBD
+# 
+Crimes
+-
+CID int pk
+SID int 
+Sus_Gen varchar
+Sus_Age int
+VID int 
+Vic_Gen varchar
+Vic_Age int
+Penal_Code varchar
+Penal_Desc varchar
+Crime_Desc varchar
+Date_Time date
+Loc_Add varchar
+Loc_City varchar
+Loc_State varchar
+Loc_Zip int
+Loc_Lat int
+Loc_Lng int
+Mis_Fel varchar
+Inc_Result varchar
+
+Suspects
+-
+SID int pk fk - Crimes.SID
+Sus_Gen varchar
+Sus_Age int
+
+Victims
+-
+VID int pk fk - Crimes.VID
+Vic_Gen varchar
+Vic_Age int
+
+Penal_Codes
+-
+Penal_Code varchar pk fk - Crimes.Penal_Code
+Penal_Desc varchar
+
+Outcomes
+-
+CID int pk fk - Crimes.CID
+Inc_Result varchar

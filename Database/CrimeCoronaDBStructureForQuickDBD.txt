@@ -1,9 +1,17 @@
 # Crime in the Tine of Corona
 # Entity Relationship for use with QuickDBD
 # 
+Unique_Cases
+-
+CID varchar pk
+Number varchar
+
+
+
 Incidents
 -
-Number varchar pk
+CID varchar pk fk - Unique_Cases.CID fk - Penal_Codes.Penal_Code
+Number varchar fk - Case_People.Number
 dateReported date
 startDate date
 offenseCode varchar
@@ -22,19 +30,17 @@ felonyMisdemeanor varchar
 dateIncident date
 weekNumber int
 
-Suspects
+People
 -
-caseID text fk - Incidents.Number
-person_ID int pk
+personID int pk
 Age int
 Sex varchar
 
-Victims
+Case_People
 -
-caseID text fk - Incidents.Number
-person_ID int pk
-Age int
-Sex varchar
+Number varchar pk 
+involvementType varchar
+personID int fk - People.personID
 
 Penal_Codes
 -
@@ -56,7 +62,7 @@ aggravated_assault int
 
 Employment
 -
-PID varchar pk fk Employment.PID
+PID varchar pk 
 Year date
 Jan int
 Feb int

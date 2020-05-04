@@ -11,48 +11,55 @@ crimes, and moderate to small increases in all other categories.
 
 ## Logistic Regression of FBI Crime data and State Unemployment Data
 
-* Initially a K-means clustering machine learning model was chosen and applied, however 
+* Initially a K-means clustering machine learning model was chosen and applied, however not much new information was obtained from the 
+initial model to make any determinations of the data so a logistic regression model was chosen.
 
 Using unemployment data gathered from the year 1980-2018 for each individual state and violent crime data reported to the FBI for each
 individual state, a logistic regression was run to determine if, based on population and crime rate, could a determination of unemployment 
 be made. The unemployment rate was broken into 2 categories - Normal for 0 - 5.4, High for 5.5 and up. This range was chosen because the 
-rom nearly 40 years of collected data, the mean yearly unemployment rates was 5.5. A logistic regression model was applied to three
-different datasets, one for aggravated assault, which is all violent crime minus homicide, robbery and rape, a second model was applied to
-robbery and a third to all combined violent crime. Based on population and the total number of crimes, all three models had an accuracy
-score of 70% to 71.7%. Aggravated assault had the best performance, with precision, recal and f1-scores averaging 70% for both classes.
+rom nearly 40 years of collected data, the mean yearly unemployment rates was 5.5.
+
+There did not appear to be a significant imbalance in the original dataset that would require any manipulation of the training set so 
+standard sampling was sufficient.
+
+A logistic regression model was applied to three different datasets, one for aggravated assault, which is all violent crime minus homicide,
+robbery and rape, a second model was applied to robbery and a third to all combined violent crime. Based on population and the total number 
+of crimes, all three models had an accuracy score of in the higher 60%. Both violent crime and aggravated assault models experienced similar
+outcomes that were fairly accurate, the robbery model was less successful in determining normal employement rates based on the population
+and robbery numbers. 
 
 Violent Crime:
-Accuracy Score : 0.7024291497975709
+Accuracy Score : 0.6842105263157895
 Classification Report
               precision    recall  f1-score   support
 
-           0       0.74      0.81      0.77       308
-           1       0.63      0.52      0.57       186
+           0       0.69      0.69      0.69       252
+           1       0.68      0.68      0.68       242
 
-    accuracy                           0.70       494
-   macro avg       0.68      0.67      0.67       494
-weighted avg       0.70      0.70      0.70       494
+    accuracy                           0.68       494
+   macro avg       0.68      0.68      0.68       494
+weighted avg       0.68      0.68      0.68       494
 
 Aggravated Assault:
-Accuracy Score : 0.7165991902834008
+Accuracy Score : 0.6842105263157895
 Classification Report
               precision    recall  f1-score   support
 
-           0       0.74      0.70      0.72       261
-           1       0.69      0.73      0.71       233
+           0       0.69      0.69      0.69       252
+           1       0.68      0.68      0.68       242
 
-    accuracy                           0.72       494
-   macro avg       0.72      0.72      0.72       494
-weighted avg       0.72      0.72      0.72       494
+    accuracy                           0.68       494
+   macro avg       0.68      0.68      0.68       494
+weighted avg       0.68      0.68      0.68       494
 
 Robbery:
-Accuracy Score : 0.7064777327935222
+Accuracy Score : 0.6781376518218624
 Classification Report
               precision    recall  f1-score   support
 
-           0       0.74      0.82      0.78       308
-           1       0.64      0.52      0.57       186
+           0       0.74      0.75      0.74       311
+           1       0.57      0.56      0.56       183
 
-    accuracy                           0.71       494
-   macro avg       0.69      0.67      0.67       494
-weighted avg       0.70      0.71      0.70       494
+    accuracy                           0.68       494
+   macro avg       0.65      0.65      0.65       494
+weighted avg       0.68      0.68      0.68       494

@@ -1,89 +1,60 @@
 # Crime in the Time of Corona
-Communication Protocols: Team members will meet during Monday evening and Wednesday evening sessions, as well as an additional call on Sunday mornings as needed to touch base.
 
-## Presentation
 
-Project is presented via Google Slides, linked [HERE](https://docs.google.com/presentation/d/1x2qhGkETnMjPA9_aBLomAbw2vduWJ3hdudnhB3qyIYo/edit#slide=id.gc6f9e470d_0_5).
+## Project Overview
 
-## Topic
+#### Topic
 
 This project will explore crime trends in Stanislaus County as they relate to unemployment rates, specifically focusing on the time period before and during the COVID-19 outbreak.  The data from Mendocino Police Department will be compared to data from the FBI in order to see if there are trends state- or nation-wide.
 
-## Reason
+#### Reason
 
 As we are living during an unprecidented time, we feel that comparing the trends during Shelter-in-Place to trends during other economic downturns will provide us the best insights to predicting how crime will evolve during COVID-19.  Understanding how the Shelter-in-Place will effect the frequency and types of crimes occuring will be relevant for law enforcement agencies to be able to proactively allocate their resources.
 
-## Data Source
 
-Local crime records obtained through the Modesto Police Department, queried by Anita and saved to a csv file.  This data will be compared to public records from greater areas to validate and/or notate any major differences.  Data source for greater areas will be pulled from the FBI.
 
-4/22/2020. Based on data released by the Employment Development Department, in March of 2020, Stanislaus County saw an unemployment rate increase just under 2% over the course of one month. February 2020 was reported to be about 6.6% and rose to nearly 8.3% by close of March 2020. In this time, the city of Modesto, California experienced a 39% increase in reported aggravated assaults, from February 2020 to March 2020. In Modesto, domestic violence makes up anywhere from 40% to 60% of monthly reported aggravated assaults.
+## Data
 
-On March 19th, 2020 Governor Gavin Newsom of California issued among the earliest and most aggressive statewide Stay At Home Orders which in effect, closed businesses that were not essential under specific guidelines. Many businesses reduced hours or closed completely, schools and daycares also closed, sending kids home and families making adjustments to cover childcare. The sudden change in employment, the stress of an entire state on lockdown and a virus for which there is no vaccine are all catalysts for increasing tension among family members.
+#### Source
 
-The unemployment rate dataset was gathered from the Bureau of Labor services and contains the unemployment broken down by year, state and month and includes a yearly average. The years for this dataset are from 1980 to 2018 to coincide with the available crime data from the FBI website.
+Local crime data sourced from Modesto Police Department, presented in comparison with national/state crime statistics from the FBI and national/state unemployment rates from last forty years.
 
-The crime dataset chosen for this assignment consists of what the FBI Uniform Crime Report classifies as “Part 1” crime. Part 1 crimes are the more serious offenses and are broken into two main categories: Violent Crimes and Property Crimes.
+#### Analysis
 
-UCR assigns a two digit code to crime classifications as follows:
+[Exploratory Data Analysis](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/ExploratoryDataAnalysis.md)
 
-- 01 - Homicide
-- 02 - Rape
-- 03 - Robbery
-- 04 - Assault (Includes aggravated (weapon), domestic violence and non-aggravated simple assault)
-
-Population for each state by year is also provided in this dataset
+[Secondary Data Analysis](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/SecondaryFBICrimeAndEmploymentDataAnalysis.md)
 
 
 
-## Questions to Answer
+## Process
 
-- What crimes have changed since the start of 2020?
-  - Frequency of crimes
-  - Types of crimes
-  - Suspect demographics
-  - Areas of incidence
-- Do the current trends correlate with other periods of high unemployment?
-- Can we use the data to predict needs of law enforcement over the next several weeks or months during Coronavirus?
+#### Database
 
-## Machine Learning Model
-- Description of Data:
-  - Unemployment data from the Bureau of Labor Services:
-    - Years - 1980 - 2018
-    - State - All 50 States of the US
-    - Monthly Unemployment Rate (Jan - Dec)
-    - Yearly Average Unemployment Rate
-  - Crime Data from the FBI Uniform Crime Report:
-    - Years - 1980 - 2018
-    - State - All 50 States of the US
-    - Violent Crime - Total containing homicide, rape, robbery, aggravated assault
-    - Individual Violent Crimes
-  - Preprocessing:
-    - Data will need to be scaled, the population and total crime numbers are into the thousands where the unemployment rate is a one or two digit number
-    - Both datasets have comprehensive totals (average unemployment rate, total violent crime) as well as the individual totals that make up these numbers, so it is likely several features will be dropped and run through the model differently.
-  - Description of preliminary feature engineering and preliminary feature selection, including their decision-making process
-    - In this model, we are looking to predict the number of aggravated assaults based on the unemployment rate. This will incorporate the use of features such as:
-      - the unemployment rate of each state for each year from 1980-2018
-      - the population of each state for each year from 1980 to 2018
-      - the number of aggravated assaults reported for each state for each year between 1980 and 2018
-  - Description of how data was split into training and testing sets
-  - Explanation of model choice, including limitations and benefits
-    - Linear regression was chosen for this model, the number of crime is a continuous variable
-      - Limitations: When dealing with crime, several factors are at play, not just unemployment and population. We’re interested in domestic violence, however it is a subset of aggravated assault and the specific breakdown is not provided by the FBI, though is believed to account for 40% to 60% of reported aggravated assault. Also, the occurrence of domestic violence also stratifies across all socioeconomic backgrounds, so the unemployment rate would only represent a fraction of households affected.
-      - Benefits: The data is easily accessible and current. National crime data is usually behind 6 months to a year, however at a local level is accessible immediately. Though households with unemployed persons is only a fraction of households affected by domestic violence, it is a population that can benefit from access to programs that can be made available at the time of filing for unemployment benefits.
-  - Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-  - Description of how the model was trained (or retrained if the team used an existing model)
-  - Description and explanation of model’s confusion matrix, including final accuracy score
-  - **Important:** If statistical analysis is not included as part of the current analysis, the team should add a description of how it would be included in the next phases of the project.
+[Database Structure for Quick DBD](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Database/CrimeCoronaDBStructureForQuickDBD.txt)
 
-## Crime_Corona Database Integration
-The Database folder contains the files shown below.
+![Database ERD](https://raw.githubusercontent.com/alysonrussell/Crime-in-the-Time-of-Corona/master/Database/EntityRelationshipDiagram-QuickDBD.png)
 
-- CrimesCoronaDatabaseSchema.md describes the tables and files.
-- EntityRelationshipDiagram-QuickDBD shows the database design with QuickDBD.
-- Build_crime_corona_db_postGresql is sql script for building the database in postGresql, although the actual creation of tables is done via Python.
+[Database Schema](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Database/CrimeCoronaDatabaseSchema.md)
 
-The Scripts folder contains the files show below.
+[Database PostgreSQL](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Database/Build_crime_corona_db_postGresql.sql)
 
-- ETLforIncidents.ipynb contains the Python code to load the crimes.csv and parse it into the needed tables for the database. The codes generates  additional tables and exports as CSV. This code also creates and populates tables in a PostgreSQL database named "crime_corona." Successfully using this script assumes your PostgreSQL is in a config.py file stored in the Database folder. You do need the password to your own PostgreSQL server in order to populate the tables. You will first need to create an empty database in PostgreSQL named crime_corona.
-- CrimesAndUnemployment.ipynb contains Python code for loading FBI and Unemployment data from CSV files into data frames. Data frames are then cleaned,  parsed and merged into a summary data frame. This code  exports the three parsed data frames into CSV files and pipes them into the crime_corona database in PostgreSQL.
+#### Machine Learning
+
+[ML Process](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/ML_Doc.md)
+
+Scripts:
+
+- [Unemployment EDA](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/ML_Scripts/Unemployment_FBICrime_EDA_ML.ipynb)
+- [Crime Clustering](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/ML_Scripts/Unemp_FBICrime_ML_Clustering.ipynb)
+- [MPD Linear Regression](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/ML_Scripts/LinearRegression_LocalData.ipynb)
+
+[ML Findings](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/MachineLearningFindings)
+
+
+
+## Final Product
+
+Project is presented via Google Slides, linked [HERE](https://docs.google.com/presentation/d/1x2qhGkETnMjPA9_aBLomAbw2vduWJ3hdudnhB3qyIYo/edit#slide=id.gc6f9e470d_0_5).
+
+Interactive dashboard of findings linked [HERE](https://datastudio.google.com/open/1oE4FtObIcGgdxFQkgxe7S7SQZI0tfHFs).

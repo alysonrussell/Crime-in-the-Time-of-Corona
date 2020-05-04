@@ -1,36 +1,58 @@
-# Finding Correlations between Unemployment Data and Violent Crime
+### Finding Correlations between Unemployment Data and Violent Crime
+
+## Linear Regression of weekly local crime data
+
+Using local crime data, a linear regression model was applied to observe the direction of certain crime types from the start of the year
+to current based on a weekly count of incident occurences. Also, we are looking for any spikes in certain crime types that coincide with the
+implementation of orders pertaining to state and county orders. In this model, crime data was obtained from the local database and split
+into datasets broken down by the number of crimes per week for all crime, domestic violence, robbery, felonies and misdemeanors. Linear
+regression was applied to each dataset individually and the findings were siginificant increases in domestic violence and misdemeanor
+crimes, and moderate to small increases in all other categories. 
+
+## Logistic Regression of FBI Crime data and State Unemployment Data
+
+* Initially a K-means clustering machine learning model was chosen and applied, however 
 
 Using unemployment data gathered from the year 1980-2018 for each individual state and violent crime data reported to the FBI for each
 individual state, a logistic regression was run to determine if, based on population and crime rate, could a determination of unemployment 
-be made. The unemployment rate was broken into 3 categories - Low for 0 - 3, Normal for 3 - 4.5 and High for 4.5 and up. a logistic 
-regression model was applied to two different datasets, one for aggravated assault, which is all violent crime minus homicide, robbery and
-rape, and a second model applied to combined violent crime. Based on population and the total number of crimes, aggravated assault resulted 
-in a 71% accuracy score and violent crimes resulted in a 72% accuracy score. Both performed well in predicting high unemployment, moderate
-in predicting low and both scored very low in using crime to predict "normal" unemployement rates. This would suggest that there is some 
-correlation between high unemployment rates and violent crime.
+be made. The unemployment rate was broken into 2 categories - Normal for 0 - 5.4, High for 5.5 and up. This range was chosen because the 
+rom nearly 40 years of collected data, the mean yearly unemployment rates was 5.5. A logistic regression model was applied to three
+different datasets, one for aggravated assault, which is all violent crime minus homicide, robbery and rape, a second model was applied to
+robbery and a third to all combined violent crime. Based on population and the total number of crimes, all three models had an accuracy
+score of 70% to 71.7%. Aggravated assault had the best performance, with precision, recal and f1-scores averaging 70% for both classes.
 
 Violent Crime:
-Accuracy Score : 0.7246963562753036
+Accuracy Score : 0.7024291497975709
 Classification Report
               precision    recall  f1-score   support
 
-           0       0.83      0.84      0.84       367
-           1       0.37      0.32      0.34        22
-           2       0.41      0.39      0.40       105
+           0       0.74      0.81      0.77       308
+           1       0.63      0.52      0.57       186
 
-    accuracy                           0.72       494
-   macro avg       0.54      0.52      0.53       494
-weighted avg       0.72      0.72      0.72       494
+    accuracy                           0.70       494
+   macro avg       0.68      0.67      0.67       494
+weighted avg       0.70      0.70      0.70       494
 
 Aggravated Assault:
-Accuracy Score : 0.7105263157894737
+Accuracy Score : 0.7165991902834008
 Classification Report
               precision    recall  f1-score   support
 
-           0       0.83      0.83      0.83       367
-           1       0.20      0.18      0.19        22
-           2       0.40      0.40      0.40       105
+           0       0.74      0.70      0.72       261
+           1       0.69      0.73      0.71       233
+
+    accuracy                           0.72       494
+   macro avg       0.72      0.72      0.72       494
+weighted avg       0.72      0.72      0.72       494
+
+Robbery:
+Accuracy Score : 0.7064777327935222
+Classification Report
+              precision    recall  f1-score   support
+
+           0       0.74      0.82      0.78       308
+           1       0.64      0.52      0.57       186
 
     accuracy                           0.71       494
-   macro avg       0.48      0.47      0.47       494
-weighted avg       0.71      0.71      0.71       494
+   macro avg       0.69      0.67      0.67       494
+weighted avg       0.70      0.71      0.70       494

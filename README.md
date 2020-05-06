@@ -33,7 +33,7 @@ Local crime data sourced from Modesto Police Department, presented in comparison
 
 [Database Structure for Quick DBD](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Database/CrimeCoronaDBStructureForQuickDBD.txt)
 
-![Database ERD](https://raw.githubusercontent.com/alysonrussell/Crime-in-the-Time-of-Corona/master/Database/EntityRelationshipDiagram-QuickDBD.pnfg)
+![Database ERD](https://raw.githubusercontent.com/alysonrussell/Crime-in-the-Time-of-Corona/master/Database/EntityRelationshipDiagram-QuickDBD.png)
 
 [Database Schema](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Database/CrimeCoronaDatabaseSchema.md)
 

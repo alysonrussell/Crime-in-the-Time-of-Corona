@@ -25,7 +25,11 @@ Local crime data sourced from Modesto Police Department, presented in comparison
 
 [Secondary Data Analysis](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/SecondaryFBICrimeAndEmploymentDataAnalysis.md)
 
+[Stanislaus Incidents ETL](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Scripts/ETLforIncidents.ipynb)
 
+[Stanislaus Incidents and Exploratory Analysis](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Scripts/IncidentsAnalysis-EDA.ipynb)
+
+[National FBI and Employment ETL and Exploratory Analysis](https://github.com/alysonrussell/Crime-in-the-Time-of-Corona/blob/master/Scripts/CrimesAndUnemployment.ipynb)
 
 ## Process
 
